@@ -1,11 +1,12 @@
 import React from 'react'
 import { FaStar } from 'react-icons/fa6'
-
+import { LazyLoadImage } from "react-lazy-load-image-component";
 const Item = (props) => {
     return (
         <div data-aos="zoom-in" key={props.id} className='rounded-2xl mt-10 p-2 bg-white dark:bg-gray-800 hover:bg-primary/60 hover:bg-gray/80 dark:hover:bg-primary hover:text-white relative shadow-xl duration-300 group max-w-[180px]'>
             <div>
-                <img src={props.image} alt="" className='max-w-[140px] rounded-2xl block mx-auto transform -translate-y-10 group-hover:scale-105 duration-300 drop-shadow-md' />
+                {/* <img src={props.image} alt="" className='max-w-[140px] rounded-2xl block mx-auto transform -translate-y-10 group-hover:scale-105 duration-300 drop-shadow-md' /> */}
+                <LazyLoadImage src={props.image} alt="" className='max-w-[140px] rounded-2xl block mx-auto transform -translate-y-10 group-hover:scale-105 duration-300 drop-shadow-md' />
             </div>
             <div className='flex flex-col '>
                 <div className='w-full flex justify-center items-center gap-1'>
