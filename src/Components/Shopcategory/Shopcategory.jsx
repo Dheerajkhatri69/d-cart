@@ -117,7 +117,7 @@ const Shopcategory = (props) => {
     }
     return (
         <div className='mb-12'>
-            <div className='container mb-20'>
+            <div className='container max-w-[1000px] mb-20'>
                 <div data-aos="zoom-in">
                     <Slider {...settings}>
                         {
