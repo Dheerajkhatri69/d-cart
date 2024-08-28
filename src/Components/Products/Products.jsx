@@ -20,7 +20,7 @@ const ProductData = [
         id: 2,
         img: Img2,
         title: "Women Western",
-        rating: 4.0,
+        rating: 4.9,
         new_price: 50,
         old_price: 80,
         color: "Red",
@@ -70,7 +70,7 @@ const Products = () => {
                 <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 place-items-center gap-5'>
                     {ProductData.map((data)=>(
                         <div data-aos='fade-up' data-aos-delay={data.aosDelay} key={data.id} className='space-y-3'>
-                            <img src={data.img} alt="" className='h-[220px] w-[150px] object-cover rounded-md'/>
+                            <img src={data.img} alt="" className='h-[220px] w-[150px] object-cover rounded-md cursor-pointer hover:scale-105 duration-300'/>
                             <div>
                                 <h3 className='font-semibold'>{data.title}</h3>
                                 <p className='text-sm text-gray-600'>{data.color}</p>
@@ -86,11 +86,11 @@ const Products = () => {
                         </div>
                     ))}
                 </div>
-                <div className="flex justify-center">
+                {/* <div className="flex justify-center">
                     <button className='text-center mt-10 cursor-pointer bg-primary text-white py-1 px-5 rounded-md'>
                         View All
                     </button>
-                </div>
+                </div> */}
             </div>
         </div>
     </div>

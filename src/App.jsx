@@ -9,14 +9,16 @@ import TopProducts from "./Components/TopProducts/TopProducts";
 import Subscribe from "./Components/Subscribe/Subscribe";
 import Testimonials from "./Components/Testimonials/Testimonials";
 import Footer from "./Components/Footer/Footer";
-import AllProducts from "./Components/AllProducts/AllProducts";
+import NewCollection from "./Components/NewCollection/NewCollection";
+import Shopcategory from "./Components/Shopcategory/Shopcategory";
+import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 function App() {
   const [orderPopup, setOrderPopup] = useState(true);
 
-  const handleOrderPopup = ()=>{
+  const handleOrderPopup = () => {
     setOrderPopup(!orderPopup);
-  } 
-  useEffect(()=>{
+  }
+  useEffect(() => {
     AOS.init({
       offset: 100,
       duration: 800,
@@ -24,21 +26,60 @@ function App() {
       delay: 100
     });
     AOS.refresh();
-  },[]);
+  }, []);
+  function ScrollToTop() {
+    const { pathname } = useLocation();
+
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, [pathname]);
+
+    return null;
+  }
   return (
-    <>
-      <div className="bg-white dark:bg-gray-900 dark:text-white duration-200">
-        <NavBar handleOrderPopup={handleOrderPopup} />
+    // <>
+    <div className="bg-white dark:bg-gray-900 dark:text-white duration-200">
+      {/* <NavBar handleOrderPopup={handleOrderPopup} />
         <Hero handleOrderPopup={handleOrderPopup}/>
         <Products/>
-        <AllProducts/>
+        <NewCollection/>
         <TopProducts handleOrderPopup={handleOrderPopup}/>
         <Banner/>
         <Subscribe/>
         <Testimonials/>
-        <Footer/>
-      </div>
-    </>
+        <Shopcategory category="women"/>
+        <Footer/> */}
+
+      <BrowserRouter>
+        <ScrollToTop/>
+        <NavBar handleOrderPopup={handleOrderPopup} />
+        <Routes>
+          <Route path='/d-cart/' element={
+            <>
+              <Hero handleOrderPopup={handleOrderPopup} />
+              <Products />
+              <NewCollection />
+              <TopProducts handleOrderPopup={handleOrderPopup} />
+              <Banner />
+              <Subscribe />
+              <Testimonials />
+            </>
+          } />
+          <Route path='/d-cart/men' element={<Shopcategory category="men" />} />
+          <Route path='/d-cart/women' element={<Shopcategory category="women" />} />
+          <Route path='/d-cart/kid' element={<Shopcategory category="kid" />} />
+          <Route path='/d-cart/top_rated' element={<Shopcategory category="banner" />} />
+
+          {/* <Route path='/d-cart/product' element={<Product/>}>
+            <Route path=':productId' element={<Product/>}/>
+          </Route>
+          <Route path='/d-cart/cart' element={<Cart/>}/>
+          <Route path='/d-cart/login' element={<Loginsignup/>}/> */}
+        </Routes>
+        <Footer />
+      </BrowserRouter>
+    </div>
+    // </>
   )
 }
 

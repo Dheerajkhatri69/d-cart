@@ -3,8 +3,8 @@ import { FaCaretDown, FaCartShopping } from 'react-icons/fa6'
 import { FiShoppingBag } from 'react-icons/fi'
 import { FaBars } from "react-icons/fa";
 import { navbarData } from "./navbarData";
-// import { Link } from "react-router-dom";
 import DarkMode from './DarkMode'
+import { Link } from "react-router-dom";
 
 export default function Navbar(props) {
     const [toggle, setToggle] = useState(false);
@@ -37,13 +37,14 @@ export default function Navbar(props) {
                         {navbarData.map((link, index) => {
                             return (
                                 <li key={index} className={link.cname}>
-                                    <a
+                                    <Link
                                         className="hover:text-primary/40 cursor-pointer"
                                         to={link.href}
                                         onClick={showNav}
+                                        // onClick={window.scrollTo(0,0)}
                                     >
                                         {link.title}
-                                    </a>
+                                    </Link>
                                 </li>
                             );
                         })}
