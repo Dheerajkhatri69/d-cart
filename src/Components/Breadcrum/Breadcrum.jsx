@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 const Breadcrum = (props) => {
     const { product } = props;
     return (
-
         <div className='container flex items-center '>
             <Link to='/d-cart/'>HOME</Link>  
             <MdKeyboardDoubleArrowRight size={40}/> 

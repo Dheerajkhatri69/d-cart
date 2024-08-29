@@ -9,7 +9,7 @@ const Item = (props) => {
 
                 <div>
                     {/* <img src={props.image} alt="" className='max-w-[140px] rounded-2xl block mx-auto transform -translate-y-10 group-hover:scale-105 duration-300 drop-shadow-md' /> */}
-                    <LazyLoadImage src={props.image} alt="" className='max-w-[140px] rounded-2xl block mx-auto transform -translate-y-10 group-hover:scale-105 duration-300 drop-shadow-md' />
+                    <LazyLoadImage src={props.image} alt="" className='mx-w-[140px] rounded-2xl block mx-auto transform -translate-y-10 group-hover:scale-105 duration-300 drop-shadow-md' />
                 </div>
                 <div className='flex flex-col '>
                     <div className='w-full flex justify-center items-center gap-1'>
