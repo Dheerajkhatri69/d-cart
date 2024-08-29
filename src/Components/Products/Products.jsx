@@ -21,7 +21,7 @@ const ProductData = [
     {
         id: 38,
         img: p38_img,
-        title: "Women Western",
+        title: "Men Western",
         rating: 4.9,
         new_price: 50,
         old_price: 80,
@@ -51,7 +51,7 @@ const ProductData = [
     {
         id: 41,
         img: p41_img,
-        title: "Women Ethnic",
+        title: "Kid Ethnic",
         rating: 4.7,
         new_price: 60,
         old_price: 100,
