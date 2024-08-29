@@ -12,6 +12,7 @@ import Footer from "./Components/Footer/Footer";
 import NewCollection from "./Components/NewCollection/NewCollection";
 import Shopcategory from "./Components/Shopcategory/Shopcategory";
 import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
+import Product from "./Components/Product/Product";
 function App() {
   const [orderPopup, setOrderPopup] = useState(true);
 
@@ -70,10 +71,10 @@ function App() {
           <Route path='/d-cart/kid' element={<Shopcategory category="kid" />} />
           <Route path='/d-cart/top_rated' element={<Shopcategory category="banner" />} />
 
-          {/* <Route path='/d-cart/product' element={<Product/>}>
+          <Route path='/d-cart/product' element={<Product/>}>
             <Route path=':productId' element={<Product/>}/>
           </Route>
-          <Route path='/d-cart/cart' element={<Cart/>}/>
+          {/* <Route path='/d-cart/cart' element={<Cart/>}/>
           <Route path='/d-cart/login' element={<Loginsignup/>}/> */}
         </Routes>
         <Footer />
