@@ -116,8 +116,11 @@ const Shopcategory = (props) => {
         ]
     }
     return (
-        <div className='mb-12'>
-            <div className='container max-w-[1000px] mb-20'>
+        <div className='mb-12 overflow-hidden'>
+
+            <div className='container max-w-[1000px] mb-20 relative'>
+            <div className='h-[700px] w-[700px] bg-primary/40 absolute -top-1/2 left-0 rounded-3xl rotate-45 -z[8]'></div>
+
                 <div data-aos="zoom-in">
                     <Slider {...settings}>
                         {
@@ -143,9 +146,9 @@ const Shopcategory = (props) => {
                     <p data-aos='fade-up' className='text-sm text-primary'>New Shirt, Pants and T-Shirt</p>
                     <h1 data-aos='fade-up' className='text-3xl font-bold'>{
                         props.category === "men" ? "MEN COLLECTION" :
-                        props.category === "women" ? "WOMEN COLLECTION" :
-                        props.category === "kid" ? "KIDS COLLECTION" : 
-                        "TOP RATED"
+                            props.category === "women" ? "WOMEN COLLECTION" :
+                                props.category === "kid" ? "KIDS COLLECTION" :
+                                    "TOP RATED"
                     }</h1>
                     <p data-aos='fade-up' className='text-xs text-gray-400'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum fuga odit magni?</p>
                 </div>

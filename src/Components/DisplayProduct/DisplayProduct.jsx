@@ -46,9 +46,8 @@ const DisplayProduct = (props) => {
         <div className='relative overflow-hidden bg-gray-100 dark:bg-slate-950 dark:text-white duration-300'>
             <div className='h-[700px] w-[700px] bg-primary/40 absolute -top-1/2 right-0 rounded-3xl rotate-45 -z[8]'></div>
 
-            <div className='container mb-10'>
+            <div className='container mb-10 '>
                 <div className='rounded-md grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-10 items-center'>
-
                     <div data-aos="zoom-in">
                         <Slider {...settings}>
                             {
