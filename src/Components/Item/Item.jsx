@@ -2,7 +2,9 @@ import React from 'react'
 import { FaStar } from 'react-icons/fa6'
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link } from 'react-router-dom';
+import { useCart } from 'react-use-cart';
 const Item = (props) => {
+    const {addItem} = useCart();
     return (
         <div data-aos="zoom-in" key={props.id} className='rounded-2xl mt-10 p-2 bg-white dark:bg-gray-800 hover:bg-primary/60 hover:bg-gray/80 dark:hover:bg-primary hover:text-white relative shadow-xl duration-300 group max-w-[180px]'>
             <Link to={`/d-cart/product/${props.id}/`}>

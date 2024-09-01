@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FaCaretDown, FaCartShopping, FaXmark} from 'react-icons/fa6'
+import { FaCaretDown, FaCartShopping, FaXmark } from 'react-icons/fa6'
 import { FiShoppingBag } from 'react-icons/fi'
 import { FaBars } from "react-icons/fa";
 import { navbarData } from "./navbarData";
@@ -26,7 +26,7 @@ export default function Navbar(props) {
                         className="flex justify-end md:hidden ring-1 ring-white rounded"
                         onClick={showNav}
                     >
-                        <i className="fas fa-bars text-white w-9 h-9 flex justify-center items-center hover:bg-white hover:text-primary/40"><FaBars  size={25} className={`${toggle ? "hidden" : ""} duration-200`} /><FaXmark size={25} className={`${toggle ? "" : "hidden"} duration-200`} /></i>
+                        <i className="fas fa-bars text-white w-9 h-9 flex justify-center items-center hover:bg-white hover:text-primary/40"><FaBars size={25} className={`${toggle ? "hidden" : ""} duration-200`} /><FaXmark size={25} className={`${toggle ? "" : "hidden"} duration-200`} /></i>
                     </button>
 
                     <ul
@@ -52,10 +52,12 @@ export default function Navbar(props) {
                             <input type="text" className='w-[40px] sm:w-[40px] group-hover:w-[200px] transition-all duration-300 rounded-lg border border-gray-300 py-1 px-2 text-sm focus:outline-none focus:border-1 focus:border-primary dark:border-gray-500 dark:bg-slate-100' />
                             <IoMdSearch className='text-slate-800 group-hover:text-primary absolute top-1/2 -translate-y-1/2 right-3' />
                         </div> */}
-                        <button onClick={() => { props.handleOrderPopup() }} className='bg-gradient-to-t from-primary to-secondary duration-200 py-1 px-4 rounded-full flex items-center gap-3 group:'>
-                            <span className='group-hover:block hidden transition-all duration-200'>Order</span>
-                            <FaCartShopping className='text-xl text-white drop-shadow-sm cursor-pointer' />
-                        </button>
+                        <Link to={'/d-cart/cart'} onClick={showNav}>
+                            <button onClick={() => { props.handleOrderPopup() }} className='bg-gradient-to-t from-primary to-secondary duration-200 py-1 px-4 rounded-full flex items-center gap-3 group:'>
+                                <span className='group-hover:block hidden transition-all duration-200'>Order</span>
+                                <FaCartShopping className='text-xl text-white drop-shadow-sm cursor-pointer' />
+                            </button>
+                        </Link>
                         <div><DarkMode /></div>
                     </div>
                     {/* <div className={`${toggle ? "flex" : " hidden"} flex items-center justify-center gap-4`}>

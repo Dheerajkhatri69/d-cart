@@ -1,7 +1,9 @@
 import React from 'react'
 import { GiFoodTruck } from 'react-icons/gi';
 import Slider from 'react-slick'
-
+import { useCart } from 'react-use-cart';
+import Swal from 'sweetalert2';
+import nyangif from '../../assets/nyan-cat.gif'
 const DisplayProduct = (props) => {
     const { product } = props;
 
@@ -42,6 +44,32 @@ const DisplayProduct = (props) => {
             }
         ]
     }
+    const handleClick = () => {
+        Swal.fire({
+            title: "Successfully Added into the Cart.",
+            width: 600,
+            padding: "1em",
+            color: "#fff",
+            background: "#acbaf2" ,
+            backdrop: "rgba(0,0,0,0.4)"
+        });
+        // Swal.fire({
+        //     title: "Succfully Add into the cart.",
+        //     width: 300,
+        //     padding: "1em",
+        //     font: "2px",
+        //     color: '#fff',
+        //     background: "#acbaf2",
+        //     backdrop: `
+        //       rgba(0,0,0,0.4)
+        //       url("https://www.google.com/url?sa=i&url=https%3A%2F%2Ftenor.com%2Fsearch%2Fcat-looking-gifs&psig=AOvVaw1JE2Hafig2Qs0DlmJ9jmaz&ust=1725253011122000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCIiezZ36oIgDFQAAAAAdAAAAABAE")
+        //       left top
+        //       no-repeat
+        //     `
+        //   });
+        return true
+    }
+    const { addItem } = useCart();
     return (
         <div className='relative overflow-hidden bg-gray-100 dark:bg-slate-950 dark:text-white duration-300'>
             <div className='h-[700px] w-[700px] bg-primary/40 absolute -top-1/2 right-0 rounded-3xl rotate-45 -z[8]'></div>
@@ -83,7 +111,11 @@ const DisplayProduct = (props) => {
                                     <div className='bg-orange-100 w-10 flex justify-center items-center shadow-lg text-center rounded-md hover:bg-orange-400 cursor-pointer duration-200'>XXL</div>
                                 </div>
                             </div>
-                            <button data-aos="fade-up" className='bg-primary hover:scale-105 duration-300 text-white py-1 px-4 rounded-full mt-4 hover:bg-white border-solid border-2 border-primary hover:text-primary'>Order Now</button>
+                            <button data-aos="fade-up"
+                                onClick={() => handleClick() ? addItem({ product, id: product.id, name: product.name, price: product.new_price, category: product.category, img: product.image }) : null}
+                                className='bg-primary hover:scale-105 duration-300 text-white py-1 px-4 rounded-full mt-4 hover:bg-white border-solid border-2 border-primary hover:text-primary'>
+                                Order Now
+                            </button>
                             <p className="text-sm capitalize"><span>{product.category}: </span>Women , T-Shirt , Crop Top</p>
                             <p className="text-sm"><span>Tags: </span>Modern , Latest</p>
 
